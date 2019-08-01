@@ -46,6 +46,8 @@ def handle_message(event):
 		message = TextSendMessage(text=currencySearch('USD'))
 	elif userSend == "日幣":
 		message = TextSendMessage(text=currencySearch('JPY'))
+	elif userSend in ['CNY', 'THB', 'SEK', 'USD', 'IDR', 'AUD', 'NZD', 'PHP', 'MYR', 'GBP', 'ZAR', 'CHF', 'VND', 'EUR', 'KRW', 'SGD', 'JPY', 'CAD', 'HKD']
+		message = TextSendMessage(text=currencySearch(userSend))
 	else :
 		message = TextSendMessage(text=userSend)
 	line_bot_api.reply_message(event.reply_token, message)
