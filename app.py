@@ -34,9 +34,9 @@ def showeb():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
 	userSend = event.message.text
-	if userSend = "你好"
+	if userSend == "你好"
 		message = TextSendMessage(text='HELLO')
-	elif userSend = "再見"
+	elif userSend == "再見"
 		message = TextSendMessage(text='BYE~~')
 	else 
 		message = TextSendMessage(text=userSend)
