@@ -4,6 +4,8 @@ from linebot import (LineBotApi, WebhookHandler)
 from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
 
+from engine.currencySearch import currencySearch
+
 app = Flask(__name__)
 
 # 設定你的Channel Access Token
@@ -40,6 +42,10 @@ def handle_message(event):
 		message = TextSendMessage(text='HELLO, '+userID)
 	elif userSend == "再見":
 		message = StickerSendMessage(package_id='11539',sticker_id='52114110')
+	elif userSend == "美金":
+		message = TextSendMessage(text=currencySearch('USD'))
+	elif userSend == "日幣":
+		message = TextSendMessage(text=currencySearch('JPY'))
 	else :
 		message = TextSendMessage(text=userSend)
 	line_bot_api.reply_message(event.reply_token, message)
