@@ -33,10 +33,14 @@ def showeb():
 #接著透過LineBotApi物件中reply_message()方法，回傳相同的訊息內容
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-	print('執行TextMessage')
-	print('使用者訊息:{}'.format(event.message.text))
-	message = TextSendMessage(text=event.message.text)
-	line_bot_api.reply_message(event.reply_token, message)
+	userSend = event.message.text
+	if userSend = "你好"
+		message = TextSendMessage(text='HELLO')
+	elif userSend = "再見"
+		message = TextSendMessage(text='BYE~~')
+	else 
+		message = TextSendMessage(text=userSend)
+line_bot_api.reply_message(event.reply_token, message)
 
 @handler.add(MessageEvent, message=StickerMessage)
 def handle_message(event):
