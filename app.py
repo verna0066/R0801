@@ -34,11 +34,12 @@ def showeb():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
 	userSend = event.message.text
-	userID = event.source.user_ID
+	userID = event.source.user_id
+
 	if userSend == "你好":
-		message = TextSendMessage(text='HELLO'+userID)
+		message = TextSendMessage(text='HELLO, '+userID)
 	elif userSend == "再見":
-		message = TextSendMessage(package_id='11539',sticker_id='5241128')
+		message = StickerSendMessage(package_id='11539',sticker_id='5241128')
 	else :
 		message = TextSendMessage(text=userSend)
 	line_bot_api.reply_message(event.reply_token, message)
