@@ -34,13 +34,13 @@ def showeb():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
 	userSend = event.message.text
-	if userSend == "你好"
+	if userSend == "你好":
 		message = TextSendMessage(text='HELLO')
-	elif userSend == "再見"
+	elif userSend == "再見":
 		message = TextSendMessage(text='BYE~~')
-	else 
+	else :
 		message = TextSendMessage(text=userSend)
-line_bot_api.reply_message(event.reply_token, message)
+	line_bot_api.reply_message(event.reply_token, message)
 
 @handler.add(MessageEvent, message=StickerMessage)
 def handle_message(event):
