@@ -35,7 +35,7 @@ def showeb():
 def handle_message(event):
 	print('執行TextMessage')
 	print('使用者訊息:{}'.format(event.message.text))
-	message = TextSendMessage(text='Hello people')
+	message = TextSendMessage(text=event.message.text)
 	line_bot_api.reply_message(event.reply_token, message)
 
 @handler.add(MessageEvent, message=StickerMessage)
