@@ -29,7 +29,7 @@ def callback():
 	return 'OK~'
 @app.route('/web')
 def showeb():
-	return '<h1> 你好 HELLO EVERY ONE</h1>'
+	return '<h1>HelloEveryOne</h1>'
 #處理訊息
 #當訊息種類為TextMessage時，從event中取出訊息內容，藉由TextSendMessage()包裝成符合格式的物件，並貼上message的標籤方便之後取用。
 #接著透過LineBotApi物件中reply_message()方法，回傳相同的訊息內容
